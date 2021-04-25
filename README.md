@@ -18,7 +18,7 @@ I always love to break them down into details. Before this, I was using Obsidian
 [ThePrimeagen](https://github.com/ThePrimeagen) and [TJ DeVries](https://github.com/tjdevries/). I have watched many of their
 YouTube videos and also their streams on Twitch and I have learned some much from them and the community. In the end, I was inspired
 to try and built my own plugin. There's no better way to start than building something that I will use everyday. I am super motivated
-to build this so that I don't have to keep switching desktop to look at my task again, I can just pop up a floating video in Neovim!
+to build this so that I don't have to keep switching desktop to look at my task again, I can just pop up a workbench in Neovim!
 Of course, there are many task management plugins out there, [vim-bujo](https://github.com/vuciv/vim-bujo) is the one that inspired
 me to built something similar with my personal tweak. So, let's get started!
 
