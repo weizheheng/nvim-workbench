@@ -27,9 +27,9 @@ me to built something similar with my personal tweak. So, let's get started!
 1. It provides a projects specific workbench (currently only support project with Git initialized)
 2. You can do anything inside the workbench, for me, I love to write down all the tasks I needed to do for a feature request or bug fixes.
 3. This way, I can keep my mind clear from remembering what I needed to do, I can easily pull the workbench up and everything is inside.
-4. Below is a short GIF showing you how I use workbench in nvim, note that, each of your project will have their own workbench :)
+4. Below is a short video showing you how I use workbench in nvim, note that, each of your project will have their own workbench :)
 
-![2021-04-25_11-08-01 (1)](https://user-images.githubusercontent.com/40255418/115979247-63639180-a5b7-11eb-9890-800f19e33f19.gif)
+https://user-images.githubusercontent.com/40255418/115995386-8ae54900-a60d-11eb-9c84-12a8e31ff585.mp4
 
 ## What this plugin can't do?
 **Disclaimer**: *When I was building this plugin, I never thought I will open source it, but yeah why not?*
