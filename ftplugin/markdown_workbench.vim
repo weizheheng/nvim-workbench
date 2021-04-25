@@ -1,11 +1,13 @@
 " search() returns 0 if it the pattern was not found
 function <SID>SearchCheck()
-  return (search('\[\]', 'nc', line('.')) || search('\[\]', 'nbc', line('.')))
+  return (search('\[ \]', 'nc', line('.')) || search('\[ \]', 'nbc', line('.')))
 endfunction
 
-" Edit markdown lists
-" Add and remove bullets with ease
-" If we are already checked then we uncheck
-nnoremap <expr> <silent> <buffer> <Plug>WorkbenchToggle <SID>SearchCheck() ? ':.s/\[\]/\[x\]<Enter>': ':.s/\[x\]/\[\]<Enter>' 
-nnoremap <silent> <buffer> <Plug>NormalWorkbenchAdd i-[] 
-inoremap <silent> <buffer> <Plug>InsertWorkbenchAdd -[] 
+" Toggle checkbox
+nnoremap <expr> <silent> <Plug>WorkbenchToggle <SID>SearchCheck() ? ':s/\[.*\]/\[x\]<CR>': ':s/\[x\]/\[ \]<Enter>' 
+
+" Create checkbox
+" - testing -> - [ ] testing
+" * testing -> * [ ] testing
+" testing -> [ ] testing
+nnoremap <expr> <silent> <Plug>WorkbenchAdd ':s/^\s*\(-<space>\\|\*<space>\)\?\zs\(\[[^\]]*\]<space>\)\?\ze./[ ]<space>/<CR>'
