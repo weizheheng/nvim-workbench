@@ -1,6 +1,6 @@
 local workbench = {}
 
-local default_path = vim.api.nvim_eval("$HOME") .. "/.cache/"
+local default_path =  vim.g.workbench_storage_path or os.getenv("HOME") .. "/.cache/"
 
 function is_git_repo()
   local bool = vim.api.nvim_eval('system("git rev-parse --is-inside-work-tree")')
