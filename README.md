@@ -4,7 +4,9 @@ A workbench plugin inspired by Obsidian Workbench with some tweak.
 ## Disclaimer
 
 This is my very first neovim plugin and also my first time coding in Lua. So, **use this at your own risk :)**
+
 I am still learning and will love to make this plugin better, any suggestions or feature requests are welcome :)
+
 Also, if you have found any bugs, feel free to report it as well :)
 
 Cheers and have a nice day! :)
