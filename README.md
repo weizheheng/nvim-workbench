@@ -60,8 +60,15 @@ nmap ,a <Plug>WorkbenchAddCheckbox
 " - [x] testing -> - [ ] testing
 nmap <leader><CR> <Plug>WorkbenchToggleCheckbox
 ```
+```lua
+To specify your own custom path to store markdown files
+-- in lua
+vim.g.workbench_storage_path = os.getenv("HOME") .. "/Documents/Notes/"
+-- in vim
+let g:workbench_storage_path = getenv("HOME") . "/Documents/Notes/"
+```
 
 ## Enhancement
-- [ ] Ability to set your own path to store all the workbench file
+- [x] Ability to set your own path to store all the workbench file
 - [ ] Ability to customize the workbench floating window
 - [ ] Improve code quality
