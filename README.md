@@ -23,3 +23,7 @@ me to built something similar with my personal tweak. So, let's get started!
 3. Below is a simple GIF showing how you can use this plugin.
 
 ## Installation
+1. For installation using `vim-plug` simply add this line to your vimrc then run PlugInstall
+```vim
+:Plug 'marcushwz/nvim-workbench'
+```
