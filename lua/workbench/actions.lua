@@ -36,8 +36,8 @@ function workbench.initialize()
   --Get the current UI
   ui = vim.api.nvim_list_uis()[1]
 
-  local width = round(ui.width * 0.7)
-  local height = round(ui.height * 0.7)
+  local width = round(ui.width * 0.5)
+  local height = round(ui.height * 0.5)
 
   initialized = true
   local default_config = {
@@ -63,8 +63,8 @@ function workbench.hide()
 end
 
 function workbench.show()
-  local width = round(ui.width * 0.7)
-  local height = round(ui.height * 0.7)
+  local width = round(ui.width * 0.5)
+  local height = round(ui.height * 0.5)
 
   local default_config = {
     relative = "editor",
