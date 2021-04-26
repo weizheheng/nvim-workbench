@@ -3,46 +3,6 @@ local workbench = {}
 local default_path = vim.g.workbench_storage_path or os.getenv("HOME") ..
                          "/.cache/"
 
--- -- some local variables
--- -- local width = 125
--- -- local height = 30
--- local shadow = {"╔", "═", "╗", "║", "╝", "═", "╚", "║"}
--- -- create a global bufnr
--- workbench_bufnr = vim.api.nvim_create_buf(false, true)
--- initialized = false
-
-
--- local function config_layout(args)
---     local args = args or {}
---     local ui = vim.api.nvim_list_uis()[1]
-
---     local width = args.width or round(ui.width * 0.5)
---     local height = args.height or round(ui.height * 0.5)
---     local columns = args.columns or (ui.width - width) / 2
---     local rows = args.rows or (ui.height - height) / 2
-
---     local default_config = {
---         relative = "editor",
---         width = width,
---         height = height,
---         col = columns,
---         row = rows,
---         style = 'minimal',
---         focusable = false,
---         border = shadow
---     }
---     vim.api.nvim_open_win(workbench_bufnr, true, default_config)
--- end
-
--- function workbench.show(args) config_layout(args) end
-
--- function workbench.initialize(args)
---     config_layout(args)
-
---     open_file_cmd = "e" .. workbench_file_path()
---     vim.cmd(open_file_cmd)
--- end
-
 function is_git_repo()
   local bool = vim.api.nvim_eval('system("git rev-parse --is-inside-work-tree")')
   local parsed_bool = vim.fn.split(bool, '\n')[1]
