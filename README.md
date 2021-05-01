@@ -3,7 +3,7 @@ A workbench plugin inspired by Obsidian Workbench with some tweak.
 
 ## Disclaimer
 
-**Warning: For now this plugin is only tested to be working on Neovim nightly, sorry for the inconvenient**
+**Update: I have added minimal support for Neovim below 0.5.0, the workbench should work fine but it's borderless :(**
 
 This is my very first neovim plugin and also my first time coding in Lua. So, **use this at your own risk :)**
 
@@ -26,19 +26,14 @@ me to built something similar with my personal tweak. So, let's get started!
 
 ## What this plugin does?
 
-1. It provides a projects specific workbench (currently only support project with Git initialized)
-2. You can do anything inside the workbench, for me, I love to write down all the tasks I needed to do for a feature request or bug fixes.
+1. It provides workbenches to your project and also its git branches (currently only support project with Git initialized)
+2. It's totally up to you on what you want to do with the workbenches :)
+3. For me personally, I use the project wise workbench to write down all the very high level stuff for a particular object
+4. Then I will use branch specific workbench to write down the tasks that I am working on in that particular git branch.
 3. This way, I can keep my mind clear from remembering what I needed to do, I can easily pull the workbench up and everything is inside.
-4. Below is a short video showing you how I use workbench in nvim, note that, each of your project will have their own workbench :)
+4. Below is a short video showing you how I use workbench in nvim, enjoy :)
 
 https://user-images.githubusercontent.com/40255418/115995386-8ae54900-a60d-11eb-9c84-12a8e31ff585.mp4
-
-## What this plugin can't do?
-**Disclaimer**: *When I was building this plugin, I never thought I will open source it, but yeah why not?*
-1. There are no support for you to define your own path to store all the markdown file, it is defaulted to `~/.cache/`
-2. There are no support for you to customize the floating window such as: width, height, border ...
-
-- Both of these are on my list in the enhancement section below.
 
 ## Installation
 1. For installation using `vim-plug` simply add this line to your vimrc then run PlugInstall
@@ -48,8 +43,10 @@ https://user-images.githubusercontent.com/40255418/115995386-8ae54900-a60d-11eb-
 2. After that there are 3 key mappings for you to set.
 ```vim
 " Below are my personal key mappings
-" <Plug>ToggleWorkbench let you toggle the floating window (which is your workbench)
-nmap <leader>b <Plug>ToggleWorkbench
+" <Plug>ToggleProjectWorkbench let you toggle project specific workbench
+nmap <leader>bp <Plug>ToggleProjectWorkbench
+" <Plug>ToggleBranchWorkbench let you toggle the branch specific workbench
+nmap <leader>bb <Plug>ToggleBranchWorkbench
 
 " <Plug>WorkbenchAddCheckbox allows you to easily turned a list in markdown to a checkbox
 " - testing -> - [ ] testing
@@ -63,7 +60,22 @@ nmap ,a <Plug>WorkbenchAddCheckbox
 nmap <leader><CR> <Plug>WorkbenchToggleCheckbox
 ```
 
-## Enhancement
-- [ ] Ability to set your own path to store all the workbench file
-- [ ] Ability to customize the workbench floating window
-- [ ] Improve code quality
+3. To specify your own custom path to store markdown files (please make sure the directory exists)
+```vim
+  " in lua
+  vim.g.workbench_storage_path = os.getenv("HOME") .. "/Documents/Notes/"
+  " in vim
+  let g:workbench_storage_path = getenv("HOME") . "/Documents/Notes/"
+```
+
+4. To specify your own workbench border, default is double. (Currently only support Neovim nightly)
+```vim
+  " available option are single, double, shadow or check the help page for custom option
+  " :h nvim_open_win and look for the border variable
+  " in lua
+  vim.g.workbench_border = 'single'
+  vim.g.workbench_border = { "+", "+" }
+  " in vim
+  let g:workbench_border = 'single'
+  let g:workbench_border = ["+", "+"]
+```

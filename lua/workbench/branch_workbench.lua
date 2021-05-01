@@ -30,7 +30,7 @@ function branch_workbench.toggle()
     return vim.api.nvim_err_writeln("Sorry, Workbench only works in a Git Repo")
   end
 
-  if utils.directory_not_exist() then
+  if utils.directory_not_exist(utils.workbench_path()) then
     utils.create_directory()
   end
 

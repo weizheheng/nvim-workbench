@@ -8,7 +8,17 @@ function round(float)
   return math.floor(float + .5)
 end
 
-local default_path = vim.api.nvim_eval("$HOME") .. "/.cache/"
+function utils.directory_not_exist(path)
+  return vim.api.nvim_call_function('glob', {path}) == ''
+end
+
+
+local default_path = vim.g.workbench_storage_path or os.getenv("HOME") .. "/.cache/workbench/"
+-- Create a initial default path
+if utils.directory_not_exist(default_path) then
+  vim.api.nvim_call_function('mkdir', {default_path})
+end
+
 repo_name = vim.api.nvim_eval('split(system("git rev-parse --show-toplevel"), "/")[-1]')
 parsed_repo_name = remove_empty_line(repo_name)
 workbench_path = default_path .. parsed_repo_name
@@ -21,10 +31,6 @@ function utils.is_git_repo()
   local bool = vim.api.nvim_eval('system("git rev-parse --is-inside-work-tree")')
   local parsed_bool = remove_empty_line(bool)
   return parsed_bool
-end
-
-function utils.directory_not_exist()
-  return vim.api.nvim_call_function('glob', {workbench_path}) == ''
 end
 
 function utils.create_directory()
@@ -48,9 +54,10 @@ function utils.show_workbench(bufnr)
   vim.api.nvim_open_win(bufnr, true, utils.window_config(width, height))
 end
 
-
 function utils.window_config(width, height)
   if vim.api.nvim_call_function('has', {'nvim-0.5.0'}) == 1 then
+    local border = vim.g.workbench_border or "double"
+
     return {
       relative = "editor",
       width = width,
@@ -59,7 +66,7 @@ function utils.window_config(width, height)
       row = (ui.height - height) / 2,
       style = 'minimal',
       focusable = false,
-      border = "double"
+      border = border
     }
   else
     return {
