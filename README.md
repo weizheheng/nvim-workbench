@@ -36,7 +36,7 @@ me to built something similar with my personal tweak. So, let's get started!
 
 https://user-images.githubusercontent.com/40255418/115995386-8ae54900-a60d-11eb-9c84-12a8e31ff585.mp4
 
-5. Another than a project specific workbench, you will also get branch specific workbench as shown in the video below
+5. Other than just a project specific workbench, you will also get branch specific workbench as shown in the video below
 
 https://user-images.githubusercontent.com/40255418/116779498-139a3400-aaa9-11eb-9adf-da9f16fb9f1c.mp4
 
