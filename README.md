@@ -32,9 +32,11 @@ me to built something similar with my personal tweak. So, let's get started!
 3. For me personally, I use the project wise workbench to write down all the very high level stuff for a particular object
 4. Then I will use branch specific workbench to write down the tasks that I am working on in that particular git branch.
 3. This way, I can keep my mind clear from remembering what I needed to do, I can easily pull the workbench up and everything is inside.
-4. Below is a short video showing you how I use workbench in nvim, enjoy :)
-
+4. Video below is showing that each of your projects will have its own project specific workbench
 https://user-images.githubusercontent.com/40255418/115995386-8ae54900-a60d-11eb-9c84-12a8e31ff585.mp4
+
+5. Another than a project specific workbench, you will also get branch specific workbench as shown in the video below
+https://user-images.githubusercontent.com/40255418/116779498-139a3400-aaa9-11eb-9adf-da9f16fb9f1c.mp4
 
 ## Installation
 1. For installation using `vim-plug` simply add this line to your vimrc then run PlugInstall
