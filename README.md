@@ -45,7 +45,7 @@ https://user-images.githubusercontent.com/40255418/116779498-139a3400-aaa9-11eb-
 ```vim
 :Plug 'marcushwz/nvim-workbench'
 ```
-2. After that there are 3 key mappings for you to set.
+2. After that there are a few key mappings for you to set.
 ```vim
 " Below are my personal key mappings
 " <Plug>ToggleProjectWorkbench let you toggle project specific workbench
