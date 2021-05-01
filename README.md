@@ -29,7 +29,7 @@ me to built something similar with my personal tweak. So, let's get started!
 
 1. It provides workbenches to your project and also its git branches (currently only support project with Git initialized)
 2. It's totally up to you on what you want to do with the workbenches :)
-3. For me personally, I use the project wise workbench to write down all the very high level stuff for a particular object
+3. For me personally, I use the project wise workbench to write down all the very high level stuff for a particular project.
 4. Then I will use branch specific workbench to write down the tasks that I am working on in that particular git branch.
 3. This way, I can keep my mind clear from remembering what I needed to do, I can easily pull the workbench up and everything is inside.
 4. Video below is showing that each of your projects will have its own project specific workbench
