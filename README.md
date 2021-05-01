@@ -2,7 +2,7 @@
 A workbench plugin inspired by Obsidian Workbench with some tweak.
 
 ## Disclaimer
-**For existing users: Please take a look at the [breaking changes](https://github.com/marcushwz/nvim-workbench/wiki/Breaking-changes-v1.0)**
+**For existing users: Please take a look at the [breaking changes](https://github.com/marcushwz/nvim-workbench/wiki/Breaking-changes-v1.0) before upgrading.**
 
 **Update: I have added minimal support for Neovim below 0.5.0, the workbench should work fine but it's borderless :(**
 
