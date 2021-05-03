@@ -20,7 +20,7 @@ function project_workbench.initialize()
 
   local win_id = vim.api.nvim_open_win(project_workbench_bufnr, true, utils.window_config(width, height))
 
-  open_file_cmd = "e" .. project_workbench.filepath()
+  open_file_cmd = "e " .. project_workbench.filepath()
   vim.api.nvim_command(open_file_cmd)
 end
 

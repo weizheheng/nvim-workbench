@@ -5,7 +5,10 @@ branch_workbench_bufnr = vim.api.nvim_create_buf(false, true)
 branch_workbench_initialized = false
 
 function branch_workbench.filepath()
-  return utils.workbench_path()  .. "/" .. utils.get_git_branch() .. "-branchbench.md"
+  -- for git flow the branch name is something like feature/ch1234/branch_name
+  local git_branch = utils.get_git_branch()
+  local parsed_git_branch = vim.api.nvim_call_function('join', {vim.api.nvim_call_function('split', {git_branch, '/'}), "-"})
+  return utils.workbench_path()  .. "/" .. parsed_git_branch .. "-branchbench.md"
 end
 
 
@@ -20,7 +23,7 @@ function branch_workbench.initialize()
 
   local win_id = vim.api.nvim_open_win(branch_workbench_bufnr, true, utils.window_config(width, height))
 
-  open_file_cmd = "e" .. branch_workbench.filepath()
+  open_file_cmd = "e " .. branch_workbench.filepath()
   vim.api.nvim_command(open_file_cmd)
 end
 

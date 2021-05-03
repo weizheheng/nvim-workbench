@@ -13,18 +13,20 @@ function utils.directory_not_exist(path)
 end
 
 
-local default_path = vim.g.workbench_storage_path or os.getenv("HOME") .. "/.cache/workbench/"
+local default_path = vim.g.workbench_storage_path or vim.api.nvim_call_function('getenv', { "HOME" }) .. "/.cache/workbench/"
 -- Create a initial default path
 if utils.directory_not_exist(default_path) then
   vim.api.nvim_call_function('mkdir', {default_path})
 end
 
-repo_name = vim.api.nvim_eval('split(system("git rev-parse --show-toplevel"), "/")[-1]')
-parsed_repo_name = remove_empty_line(repo_name)
-workbench_path = default_path .. parsed_repo_name
+function get_workbench_path()
+  repo_name = vim.api.nvim_eval('split(system("git rev-parse --show-toplevel"), "/")[-1]')
+  parsed_repo_name = remove_empty_line(repo_name)
+  return default_path .. parsed_repo_name
+end
 
 function utils.workbench_path()
-  return workbench_path
+  return get_workbench_path()
 end
 
 function utils.is_git_repo()
@@ -34,7 +36,7 @@ function utils.is_git_repo()
 end
 
 function utils.create_directory()
-  vim.api.nvim_call_function('mkdir', {workbench_path})
+  vim.api.nvim_call_function('mkdir', {get_workbench_path()})
 end
 
 function utils.get_git_branch()
