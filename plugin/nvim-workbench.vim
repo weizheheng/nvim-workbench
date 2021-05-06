@@ -8,13 +8,13 @@ endfunction
 " Toggle checkbox
 " - [ ] testing -> - [x] testing
 " - [x] testing -> - [ ] testing
-nnoremap <expr> <silent> <Plug>WorkbenchToggleCheckbox <SID>SearchCheck() ? ':s/\[.*\]/\[x\]<CR>': ':s/\[x\]/\[ \]<Enter>' 
+nnoremap <expr> <silent> <Plug>WorkbenchToggleCheckbox <SID>SearchCheck() ? ':s/\[.*\]/\[x\]<CR>': ':s/\[x\]/\[ \]<Enter>/<bar>noh<CR>' 
 
 " Create checkbox
 " - testing -> - [ ] testing
 " * testing -> * [ ] testing
 " testing -> [ ] testing
-nnoremap <expr> <silent> <Plug>WorkbenchAddCheckbox ':s/^\s*\(-<space>\\|\*<space>\)\?\zs\(\[[^\]]*\]<space>\)\?\ze./[ ]<space>/<CR>'
+nnoremap <expr> <silent> <Plug>WorkbenchAddCheckbox ':s/^\s*\(-<space>\\|\*<space>\)\?\zs\(\[[^\]]*\]<space>\)\?\ze./[ ]<space>/<bar>noh<CR>'
 
 nnoremap <expr> <silent> <Plug>ToggleWorkbench ":lua require('workbench').toggle_project_workbench()<CR>"
 nnoremap <expr> <silent> <Plug>ToggleProjectWorkbench ":lua require('workbench').toggle_project_workbench()<CR>"
