@@ -1,3 +1,6 @@
+" Credit to https://github.com/olmokramer
+" https://gist.github.com/olmokramer/feadbf14a055efd46a8e1bf1e4be4447
+" Only changes I did is to add the toggle at an empty state instead of the one user passed in
 let s:bullet = '^\s*\%(\d\+\.\|[-+*]\)'
 
 function! markdown#checkbox#toggle(...) abort
