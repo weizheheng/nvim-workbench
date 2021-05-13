@@ -1,5 +1,5 @@
 # nvim-workbench
-A workbench plugin inspired by Obsidian Workbench with some tweak.
+A workbench plugin for you to write your thoughts down without leaving the project and the editor :)
 
 ## Disclaimer
 **For existing users: Please take a look at the [breaking changes](https://github.com/marcushwz/nvim-workbench/wiki/Breaking-changes-v1.0) before upgrading.**
