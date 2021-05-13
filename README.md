@@ -53,13 +53,8 @@ nmap <leader>bp <Plug>ToggleProjectWorkbench
 " <Plug>ToggleBranchWorkbench let you toggle the branch specific workbench
 nmap <leader>bb <Plug>ToggleBranchWorkbench
 
-" <Plug>WorkbenchAddCheckbox allows you to easily turned a list in markdown to a checkbox
+" <Plug>WorkbenchToggleCheckbox allows you to add/toggle the checkbox
 " - testing -> - [ ] testing
-" * testing -> * [ ] testing
-" testing -> [ ] testing
-nmap ,a <Plug>WorkbenchAddCheckbox
-
-" <Plug>WorkbenchToggleCheckbox allows you to toggle the checkbox
 " - [ ] testing -> - [x] testing
 " - [x] testing -> - [ ] testing
 nmap <leader><CR> <Plug>WorkbenchToggleCheckbox

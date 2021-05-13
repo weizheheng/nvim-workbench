@@ -5,11 +5,15 @@ function <SID>SearchCheck()
   return (search('\[ \]', 'nc', line('.')) || search('\[ \]', 'nbc', line('.')))
 endfunction
 
+" When there are no checkbox, it will add one
+" - testing -> - [ ] testing
 " Toggle checkbox
 " - [ ] testing -> - [x] testing
 " - [x] testing -> - [ ] testing
-nnoremap <expr> <silent> <Plug>WorkbenchToggleCheckbox <SID>SearchCheck() ? ':s/\[.*\]/\[x\]<CR>': ':s/\[x\]/\[ \]<Enter>' 
+nnoremap <expr> <silent> <Plug>WorkbenchToggleCheckbox ":call markdown#checkbox#toggle('x')<CR>"
 
+" Outdated no longer needed
+" Toggle checkbox does the job now
 " Create checkbox
 " - testing -> - [ ] testing
 " * testing -> * [ ] testing
