@@ -18,7 +18,7 @@ nnoremap <expr> <silent> <Plug>WorkbenchToggleCheckbox ":call markdown#checkbox#
 " - testing -> - [ ] testing
 " * testing -> * [ ] testing
 " testing -> [ ] testing
-nnoremap <expr> <silent> <Plug>WorkbenchAddCheckbox ':s/^\s*\(-<space>\\|\*<space>\)\?\zs\(\[[^\]]*\]<space>\)\?\ze./[ ]<space>/<CR>'
+nnoremap <expr> <silent> <Plug>WorkbenchAddCheckbox ":call markdown#checkbox#toggle(' ')<CR>"
 
 nnoremap <expr> <silent> <Plug>ToggleWorkbench ":lua require('workbench').toggle_project_workbench()<CR>"
 nnoremap <expr> <silent> <Plug>ToggleProjectWorkbench ":lua require('workbench').toggle_project_workbench()<CR>"
