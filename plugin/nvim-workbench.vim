@@ -24,8 +24,14 @@ nnoremap <expr> <silent> <Plug>ToggleWorkbench ":lua require('workbench').toggle
 nnoremap <expr> <silent> <Plug>ToggleProjectWorkbench ":lua require('workbench').toggle_project_workbench()<CR>"
 nnoremap <expr> <silent> <Plug>ToggleBranchWorkbench ":lua require('workbench').toggle_branch_workbench()<CR>"
 
+" Disable highlighting for floating window
+hi NormalFloat guibg=none guifg=none
+
 " Update project workbench title. 
 autocmd bufnewfile workbench.md call append(0, '# ' . split(expand('%:p:h:t'), '\v\n')[0] . " Workbench!")
 autocmd bufnewfile *branchbench.md call append(0, '# '. split(expand('%:p:h:t'), '\v\n')[0] . '--' . split(system('git branch --show-current', '\v\n'))[0] . " Workbench!")
+
+" Auto save on buf leave
+au BufLeave * silent! wall
 
 
