@@ -32,6 +32,5 @@ autocmd bufnewfile workbench.md call append(0, '# ' . split(expand('%:p:h:t'), '
 autocmd bufnewfile *branchbench.md call append(0, '# '. split(expand('%:p:h:t'), '\v\n')[0] . '--' . split(system('git branch --show-current', '\v\n'))[0] . " Workbench!")
 
 " Auto save on buf leave
-au BufLeave * silent! wall
-
-
+au BufLeave workbench.md silent! wall
+au BufLeave *branchbench.md silent! wall
