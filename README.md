@@ -2,9 +2,8 @@
 A workbench plugin for you to write your thoughts down without leaving the project and the editor :)
 
 ## Disclaimer
-**For existing users: Please take a look at the [breaking changes](https://github.com/marcushwz/nvim-workbench/wiki/Breaking-changes-v1.0) before upgrading.**
 
-**Update: I have added minimal support for Neovim below 0.5.0, the workbench should work fine but it's borderless :(**
+**VERSION: This plugin should work fine with neovim v0.6.0 and above**
 
 This is my very first neovim plugin and also my first time coding in Lua. So, **use this at your own risk :)**
 
