@@ -13,10 +13,10 @@ function utils.directory_not_exist(path)
 end
 
 
-local default_path = vim.g.workbench_storage_path or vim.api.nvim_call_function('getenv', { "HOME" }) .. "/.cache/workbench/"
+local default_path = vim.g.workbench_storage_path or vim.fn.getenv("HOME") .. "/.cache/workbench/"
 -- Create a initial default path
 if utils.directory_not_exist(default_path) then
-  vim.api.nvim_call_function('mkdir', {default_path})
+  vim.fn.mkdir(default_path, "p")
 end
 
 function get_workbench_path()
@@ -36,7 +36,7 @@ function utils.is_git_repo()
 end
 
 function utils.create_directory()
-  vim.api.nvim_call_function('mkdir', {get_workbench_path()})
+  vim.fn.mkdir(get_workbench_path(), "p")
 end
 
 function utils.get_git_branch()
